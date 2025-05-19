@@ -140,7 +140,7 @@ while cap.isOpened():
 
     # Process gesture if it's consistent for multiple frames and cooldown expired
     if current_gesture and gesture_hold_frames > 5 and gesture_cooldown == 0:
-        gesture_cooldown = 5  # Set cooldown period
+        gesture_cooldown = 10  # Set cooldown period
 
         if current_gesture == "Open_Palm":
             # Reset rotations
