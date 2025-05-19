@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 Run the main application:
 ```bash
-python main.py
+python 3d-gesture-control.py
 ```
 
 ### Controls
@@ -65,7 +65,7 @@ python main.py
 
 ## Project Structure
 
-- `main.py`: Main application entry point
+- `3d-gesture-control.py`: Main application entry point
 - `create_object.py`: Contains functions for creating 3D objects
 - `projection.py`: Handles 3D to 2D projection and rotation
 - `requirements.txt`: List of required packages
@@ -83,7 +83,7 @@ To add new object types, modify the `create_object.py` file with your new object
 
 ## License
 
-[MIT License](LICENSE)
+[GNU General Public Licence v3.0](LICENSE)
 
 ## Acknowledgments
 
