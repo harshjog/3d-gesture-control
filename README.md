@@ -24,6 +24,7 @@ A computer vision application that allows users to manipulate 3D objects in real
 - MediaPipe
 - NumPy
 - Matplotlib
+- Open3D
 
 ## Installation
 
@@ -51,17 +52,17 @@ python 3d-gesture-control.py
 
 ### Controls
 
-| Gesture | Action |
-|---------|--------|
-| Open Palm | Reset rotations |
-| Closed Fist | Toggle rotation on/off |
-| Victory Sign | Switch between cube and sphere |
+| Gesture | Action                              |
+|---------|-------------------------------------|
+| Open Palm | Reset rotations                     |
+| Closed Fist | Toggle rotation on/off              |
+| Victory Sign | Switch between objects              |
 | Pointing Up | Cycle between X, Y, Z rotation axes |
-| Thumb Up | Increase rotation speed |
-| Thumb Down | Decrease rotation speed |
-| Right Hand Movement | Move the object |
-| Thumb-Index Pinch | Scale the object |
-| Press ESC | Exit application |
+| Thumb Up | Increase rotation speed             |
+| Thumb Down | Decrease rotation speed             |
+| Right Hand Movement | Move the object                     |
+| Thumb-Index Pinch | Scale the object                    |
+| Press ESC | Exit application                    |
 
 ## Project Structure
 
@@ -79,7 +80,7 @@ The 3D objects are created with parametric equations, transformed in 3D space, a
 
 ## Extending the Project
 
-To add new object types, modify the `create_object.py` file with your new object's parametric equations or mesh data. The main application can be extended to support additional gestures by modifying the gesture recognition handling in `main.py`.
+To add new object types, modify the `create_object.py` file with your new object's parametric equations or mesh data. The main application can be extended to support additional gestures by modifying the gesture recognition handling in `3d-gesture-control.py`.
 
 ## License
 
@@ -91,3 +92,4 @@ To add new object types, modify the `create_object.py` file with your new object
 - [OpenCV](https://opencv.org/) for image processing
 - [NumPy](https://numpy.org/) for numerical operations
 - [Matplotlib](https://matplotlib.org/) for visualization
+- Open3D for importing 3D models
