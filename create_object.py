@@ -1,4 +1,5 @@
 import numpy as np
+import open3d as o3d
 
 def create_specific(n, center, size, resolution = 50):
     if n == 0:
@@ -6,6 +7,9 @@ def create_specific(n, center, size, resolution = 50):
         return points[:, 0], points[:, 1], points[:, 2]  # Return x, y, z
     elif n == 1:
         points = create_dense_cube_edges(center, size, resolution)
+        return points[:, 0], points[:, 1], points[:, 2]  # Return x, y, z
+    elif n == 2:
+        points = create_mobius(size)
         return points[:, 0], points[:, 1], points[:, 2]  # Return x, y, z
     else:
         print("please enter valid input")
@@ -69,6 +73,16 @@ def create_dense_cube_edges(center, size, resolution):
             all_points.append(point)
 
     return np.array(all_points)
+
+def create_mobius(size):
+    """Creates a mobius strip"""
+    dataset = o3d.data.KnotMesh()
+    mesh = o3d.io.read_triangle_mesh(dataset.path)
+    mesh.compute_vertex_normals()
+    high_res_mesh = mesh.subdivide_loop(number_of_iterations=1)
+    points = np.asarray(high_res_mesh.vertices)*size/100
+    return points
+
 
 def create_coordinate_axes(center, length=100):
     """Create coordinate axes (x, y, z) for visualization."""

@@ -112,6 +112,8 @@ while cap.isOpened():
         n = 0
     elif key == ord('c'):  # 'c' for cube (n=1)
         n = 1
+    elif key == ord('m'):  # 'm' for mobius
+        n = 2
     elif key == 27:  # Escape key to exit
         break
 
@@ -153,8 +155,10 @@ while cap.isOpened():
             print(f"Rotation {'activated' if rotation_active else 'deactivated'}")
 
         elif current_gesture == "Victory":
-            # Toggle between cube and sphere
-            n = 0 if n == 1 else 1
+            # Toggle between objects
+            n += 1
+            if n == 3:
+                n = 0
             print(f"Switched objects")
 
         elif current_gesture == "Pointing_Up":
